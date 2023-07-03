@@ -8,11 +8,11 @@ RUN apk add --update py2-pip
 RUN pip install --upgrade pip
 
 # install Python modules needed by the Python app
-COPY requirements.txt /usr/src/app/
+COPY Project1-Flask-app/workdir/requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
 # copy files required for the app to run
-COPY app.py /usr/src/app/
+COPY Project1-Flask-app/workdir/app.py /usr/src/app/
 COPY Project1-Flask-app/workdir/templates/index.html /usr/src/app/templates/
 
 # tell the port number the container should expose
